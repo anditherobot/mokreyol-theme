@@ -1,0 +1,11 @@
+@import "bscore_variables";
+@import "bootstrap/bootstrap";
+@import "bscore_style";
+//@import "bscore_woocommerce"; // Comment or delete this line if WooCommerce styles are not needed
+@import "bscore_custom";
+
+@import "menu.scss";
+
+@import "frontpage.scss";
+@import "recent-posts.scss";
+@import "category.scss";

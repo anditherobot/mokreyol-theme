@@ -1,0 +1,49 @@
+/*--------------------------------------------------------------
+Single page-*.php and post-*.php
+--------------------------------------------------------------*/
+
+// Featured image
+.wp-post-image {
+  width: 100%;
+}
+
+// Featured full-width- image
+.featured-full-width-img {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.more-in-category h3 {
+  font-size: 1.25rem;
+}
+
+.more-in-category ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.more-in-category ul li a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.more-in-category ul li a:hover {
+  text-decoration: underline;
+}
+
+.post-thumbnail img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+// Pagination
+[rel="prev"]:before {
+  content: "« ";
+}
+
+[rel="next"]:after {
+  content: " »";
+}

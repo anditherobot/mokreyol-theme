@@ -1,0 +1,64 @@
+.featured-post .card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.recent-posts .media img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+}
+
+.recent-posts .media {
+    align-items: center;
+}
+
+.recent-posts .media-body a {
+    color: #007bff; /* Primary color */
+}
+
+.recent-posts .media-body a:hover {
+    text-decoration: underline;
+}
+
+.recent-post-thumbnail {
+    width:64px;
+    height: 64px;
+    object-fit: cover;
+}
+
+.recent-post-title {
+    font-size: 1.2rem; /* Adjust title size */
+}
+
+.recent-post-details {
+    font-size: 0.8rem; /* Smaller font for details */
+    color: #6c757d; /* Muted color for details */
+    font-weight: bold; /* Bold font for details */
+}
+
+.no-thumbnail {
+    width: 64px;
+    height: 64px;
+    background-color: #ddd; /* Grey background */
+    position: relative;
+}
+
+.no-thumbnail::before, .no-thumbnail::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px; /* Line thickness */
+    height: 100%;
+    background-color: #333; /* Line color */
+    transform: translateX(-50%) rotate(45deg); /* Positioning and angle */
+}
+
+.no-thumbnail::after {
+    transform: translateX(-50%) rotate(-45deg); /* Opposite angle for the X */
+}
+
+#load-more {
+    width: 100%;
+}

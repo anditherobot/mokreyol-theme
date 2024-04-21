@@ -1,0 +1,39 @@
+.mobile-menu-toggle-container {
+    text-align: center; /* Center aligns the content */
+    padding: 5px; /* Adds some padding around the content */
+}
+
+.menu-label {
+    font-size: 0.8rem; /* Smaller font size for the label */
+    font-weight: bold; /* Bold font weight */
+    margin-bottom: 5px; /* Adds a small space between the label and the button */
+    display: block; /* Ensures the label takes its own line */
+}
+
+.navtext {
+    font-size: 2.5rem; /* Size of the text */
+    font-weight: bold; /* Weight of the font */
+    font-family: 'Helvetica', sans-serif; /* Font family */
+    color: #3498db; /* Color of the text */
+    letter-spacing: 0.05rem; /* Spacing between letters */ 
+    transition: all 0.3s ease; /* Transition for hover effects */
+}
+
+.navbar-brand-container {
+    display: flex; /* Aligns items in a row */
+    flex-direction: column; /* Stacks items vertically */
+    align-items: left; /* Centers items horizontally */
+}
+
+.tagline {
+    font-size: 1rem; /* Sets the size of the tagline text */
+    color: #777; /* Sets the color of the tagline text */
+   margin-top: -15px;
+   font-weight: bold;
+}
+
+@media (min-width: 768px) { /* Adjusts styling for larger screens */
+    .tagline {
+        font-size: 1.25rem; /* Slightly larger text on larger screens */
+    }
+}

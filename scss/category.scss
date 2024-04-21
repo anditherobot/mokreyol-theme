@@ -1,0 +1,20 @@
+.thumbnail-col {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0; /* Prevents resizing */
+}
+
+
+
+.category-info {
+    font-size: 1.1rem; /* Adjust as needed */
+  }
+
+  header.page-header ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+  header.page-header li a {
+    text-decoration: none;
+  }

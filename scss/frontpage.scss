@@ -1,0 +1,15 @@
+.categories-container .category {
+    padding: 0.1rem; /* Padding inside each category */
+    margin: 0.25rem; /* Margin around each category */
+    border: 1px solid #ccc; /* Border around each category */
+    border-radius: 0.25rem; /* Rounded corners */
+    text-decoration: none; /* Removes underline from links */
+    color: inherit; /* Inherits text color from parent */
+    font-weight: bold;
+}
+
+.categories-container .category:hover {
+    background-color: #d0ddeb; /* Example hover effect */
+    border: 1px solid #000;
+    
+}
