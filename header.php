@@ -41,14 +41,14 @@
 
     <div class="fixed-top bg-body-tertiary">
 
-      <nav id="nav-main" class="navbar navbar-expand-lg">
+      <nav id="nav-main" class="navbar navbar-expand-lg bg-primary">
 
         <div class="<?= bootscore_container_class(); ?>">
       
           <!-- Navbar Brand and Tagline -->
 <div class="navbar-brand-container">
-    <a class="navbar-brand xs d-md-none navtext" href="<?= esc_url(home_url()); ?>">mokreyòl</a>
-    <a class="navbar-brand md d-none d-md-block navtext" href="<?= esc_url(home_url()); ?>">mokreyòl</a>
+    <a class="navbar-brand xs d-md-none navtext" href="<?= esc_url(home_url()); ?>">Mokreyòl</a>
+    <a class="navbar-brand md d-none d-md-block navtext" href="<?= esc_url(home_url()); ?>">MoKreyòl</a>
     <p class="tagline">Platfòm nimerik an kreyòl</p>
 </div>
 

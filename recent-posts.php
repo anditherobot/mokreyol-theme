@@ -1,8 +1,8 @@
 <!-- Featured Article and Recent Posts Row -->
 <div class="row">
     <h3>Atik resan </h3>
-    <p>--------------------</p>
-    <div class="col-lg-8">
+    
+    <div class="col-lg-6 border p-3">
     <!-- Recent Posts -->
     <ul class="list-unstyled">
         <?php
@@ -33,14 +33,7 @@
                                 <a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark"><?php the_title(); ?></a>
                             </h5>
                         </div>
-                        <!-- Detail Row -->
-                        <div class="row text-muted" style="font-size: 0.8rem; font-weight: bold;">
-                            <div class="col-12">
-                                <?php echo get_the_date(); ?> | 
-                                <?php echo get_the_author(); ?> | 
-                                <?php comments_number('No Comments', '1 Comment', '% Comments'); ?>
-                            </div>
-                        </div>
+                       
                     </div>
                 </li>
                 <?php
