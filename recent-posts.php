@@ -1,8 +1,10 @@
 <!-- Featured Article and Recent Posts Row -->
-<div class="row">
+<div class="col-lg-6 border p-3">
+
+
     <h3>Atik resan </h3>
     
-    <div class="col-lg-6 border p-3">
+    
     <!-- Recent Posts -->
     <ul class="list-unstyled">
         <?php
@@ -33,7 +35,21 @@
                                 <a href="<?php the_permalink(); ?>" class="text-decoration-none text-dark"><?php the_title(); ?></a>
                             </h5>
                         </div>
-                       
+                        <!-- Detail Row -->
+                        <div class="row text-muted" style="font-size: 0.8rem; font-weight: bold;">
+                            <div class="col-12">
+                                <?php echo get_the_date(); ?> | 
+                              
+                                <?php
+                                $categories = get_the_category();
+                                if (!empty($categories)) {
+                                    foreach ($categories as $category) {
+                                        echo '<a href="' . get_category_link($category->term_id) . '">' . $category->name . '</a> | ';
+                                    }
+                                }
+                                ?>
+                            </div>
+                        </div>
                     </div>
                 </li>
                 <?php
@@ -44,6 +60,9 @@
     </ul>
     <!-- Load More Button -->
     <button id="load-more" data-page="1" data-url="<?php echo admin_url('admin-ajax.php'); ?>" class="btn btn-outline-primary">Load More</button>
-</div>
 
 </div>
+
+    
+
+
