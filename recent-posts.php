@@ -1,5 +1,5 @@
 <!-- Featured Article and Recent Posts Row -->
-<div class="col-lg-6 border p-3">
+<div class="col-lg-9 border p-3">
 
 
     <h3>Atik resan </h3>

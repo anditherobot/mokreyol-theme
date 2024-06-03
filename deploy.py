@@ -6,11 +6,11 @@ import logging
 # Hardcoded parameters
 host = "anditherobot.com"  # Update with your server's hostname or IP address
 username = "ubuntu"  # SSH username
-repo_dir = "/home/ubuntu/www/wordpress/wp-content/themes/bootscore"  # Path to the theme repository on the server
+repo_dir = "/home/mokreyol.com/htdocs/wp-content/themes/bootscore-main"  # Path to the theme repository on the server
 ssh_key_filepath = "/mnt/c/Users/expan/.ssh/id_rsa" # Updated path to your private SSH key
 
 
-ef setup_logging():
+def setup_logging():
     logging.basicConfig(
         format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
         level=logging.INFO
