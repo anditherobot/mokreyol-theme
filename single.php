@@ -18,7 +18,7 @@ get_header();
 
     <div class="row justify-content-center">
       <!-- Main Content Column -->
-      <div class="<?= bootscore_main_col_class(); ?>">
+      <div class="col">
         <main id="main" class="site-main">
 
           <!-- Post Card -->
