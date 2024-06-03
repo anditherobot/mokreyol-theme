@@ -30,6 +30,7 @@ get_header();
                 <?php get_template_part('jumbotron'); ?>
 
                     <?php get_template_part('recent-posts'); ?>
+                    <?php get_template_part('widgets-section'); ?>
 
                 </main>
 
