@@ -5,7 +5,8 @@ Template Name: Categories
 ?>
 
 <?php get_header(); ?>
-
+<div id="content" class="site-content <?= bootscore_container_class(); ?> py-5 mt-5">
+    <div id="primary" class="content-area"></div>
 <div class="jumbotron mt-4 p-1 bg-light bg-gradient border rounded-3">
     <div class="categories-container d-flex flex-wrap">
         <?php
@@ -26,5 +27,5 @@ Template Name: Categories
         ?>
     </div>
 </div>
-
+</div></div>
 <?php get_footer(); ?>
