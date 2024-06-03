@@ -23,7 +23,7 @@ get_header();
         <?php bs_after_primary(); ?>
 
         <div class="row">
-            <div class="<?= bootscore_main_col_class(); ?>">
+            
 
                 <main id="main" class="site-main">
 
@@ -34,7 +34,7 @@ get_header();
 
                 </main>
 
-            </div>
+           
 
         </div>
 
