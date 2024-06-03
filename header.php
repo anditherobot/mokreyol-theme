@@ -73,60 +73,29 @@
               ));
               ?>
 
-              <!-- Top Nav 2 Widget -->
-              <?php if (is_active_sidebar('top-nav-2')) : ?>
-                <?php dynamic_sidebar('top-nav-2'); ?>
-              <?php endif; ?>
-
+             
             </div>
           </div>
 
           <div class="header-actions d-flex align-items-center">
-
-            <!-- Top Nav Widget -->
-            <?php if (is_active_sidebar('top-nav')) : ?>
-              <?php dynamic_sidebar('top-nav'); ?>
-            <?php endif; ?>
-
             <?php
-            if (class_exists('WooCommerce')) :
-              get_template_part('template-parts/header/actions', 'woocommerce');
-            else :
               get_template_part('template-parts/header/actions');
-            endif;
             ?>
 
             <!-- Navbar Toggler -->
             <div class="mobile-menu-toggle-container">
-    <div class="menu-label  d-lg-none">MENU</div>
-    <button class="btn btn-outline-secondary d-lg-none ms-1 ms-md-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar">
-        <i class="fa-solid fa-bars"></i>
+  
+    <button class="btn btn-outline-light d-lg-none ms-1 ms-md-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-navbar" aria-controls="offcanvas-navbar">
+    <div class="menu-label  d-lg-none">MENU</div>    
+    <i class="fa-solid fa-bars"></i>
+        
         <span class="visually-hidden-focusable">Meni</span>
     </button>
 </div>
 
 
           </div><!-- .header-actions -->
-
         </div><!-- bootscore_container_class(); -->
-
       </nav><!-- .navbar -->
-
-      <?php
-      if (class_exists('WooCommerce')) :
-        get_template_part('template-parts/header/top-nav-search-collapse', 'woocommerce');
-      else :
-        get_template_part('template-parts/header/top-nav-search-collapse');
-      endif;
-      ?>
-
     </div><!-- .fixed-top .bg-light -->
-
-    <!-- Offcanvas User and Cart -->
-    <?php
-    if (class_exists('WooCommerce')) :
-      get_template_part('template-parts/header/offcanvas', 'woocommerce');
-    endif;
-    ?>
-
   </header><!-- #masthead -->
