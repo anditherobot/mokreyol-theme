@@ -11,9 +11,11 @@ get_header();
     <!-- Column 1 -->
     <div class="col-md-6">
       <nav class="mb-2">
-        <a href="javascript:history.back()" class="btn btn-outline-primary me-2">Back</a>
-        <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="btn btn-outline-secondary">All Categories</a>
+        <a href="javascript:history.back()" class="btn btn-outline-primary me-2"> << Retounen</a>
+        
+        <a href="<?php echo get_permalink(get_page_by_path('lis-kategori')); ?>" >Tout Kategori yo</a>
       </nav>
+      <hr>
       <h1><?php single_cat_title(); ?></h1>
       <?php the_archive_description('<div class="archive-description">', '</div>'); ?>
     </div>
