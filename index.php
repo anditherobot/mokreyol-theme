@@ -90,7 +90,7 @@ get_header();
 
                             <p class="card-text">
                               <a class="read-more" href="<?php the_permalink(); ?>">
-                                <?php _e('Read more »', 'bootscore'); ?>
+                                <?php _e('Li Plis »', 'bootscore'); ?>
                               </a>
                             </p>
 
