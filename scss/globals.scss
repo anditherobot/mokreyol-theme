@@ -13,3 +13,23 @@ h3 {
     border-top: 2px solid grey;
 
 }
+
+.navigation-links {
+    display: flex; /* Enables Flexbox */
+    justify-content: space-between; /* Distributes items evenly in the container */
+    width: 100%; /* Takes full width of the parent container */
+}
+
+/* Optional: Style the links */
+.navigation-links a {
+    padding: 10px 20px; /* Adds some padding around the links */
+    background-color: #f0f0f0; /* Gives a light background color */
+    border: 1px solid #ddd; /* Adds a light border */
+    text-decoration: none; /* Removes underline from links */
+    color: #333; /* Sets the text color */
+}
+
+/* Optional: Hover effect for links */
+.navigation-links a:hover {
+    background-color: #e0e0e0; /* Darkens the background on hover */
+}

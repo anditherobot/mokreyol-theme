@@ -16,7 +16,7 @@
 
 <footer>
 
-
+  
 
   <div class="bootscore-info bg-body-tertiary text-body-dark border-top py-2 text-center">
     <div class="<?= bootscore_container_class(); ?>">

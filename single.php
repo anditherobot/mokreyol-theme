@@ -57,23 +57,14 @@ get_header();
             </div>
 
             <!-- Card Footer with Three Columns: Previous, Post Meta, Next -->
-            <div class="card-footer row">
-              <div class="col-md-4">
-                <?php previous_post_link('%link', 'Previous'); ?>
-              </div>
-              <div class="col-md-4 text-center">
-                <p class="entry-meta">
-                  <small class="text-body-tertiary">
-                    <?php
-                    bs_get_published_date();
-                    bootscore_author();
-                    bootscore_comment_count();
-                    ?>
-                  </small>
-                </p>
-              </div>
-              <div class="col-md-4 text-end">
-                <?php next_post_link('%link', 'Next'); ?>
+            <div class="card-footer row d-flex">
+            <nav aria-label="Page navigation">
+              <ul class="pagination justify-content-between">
+                <li class="page-item"><?php previous_post_link('%link'); ?></li>
+                <li class="page-item"><?php next_post_link('%link'); ?></li>
+              </ul>
+            </nav>
+              
               </div>
             </div>
 
@@ -86,12 +77,7 @@ get_header();
             </div>
             <!-- Related posts using bS Swiper plugin -->
             <?php if (function_exists('bootscore_related_posts')) bootscore_related_posts(); ?>
-            <nav aria-label="Page navigation">
-              <ul class="pagination justify-content-center">
-                <li class="page-item"><?php previous_post_link('%link'); ?></li>
-                <li class="page-item"><?php next_post_link('%link'); ?></li>
-              </ul>
-            </nav>
+           
             <?php comments_template(); ?>
           </footer>
 
