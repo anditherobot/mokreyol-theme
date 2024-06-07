@@ -26,7 +26,7 @@ get_header();
             <main id="main" class="site-main">
                 
                 <!-- New Row for Featured Post and Buttons -->
-                <div class="row mb-4">
+                <div class="row mb-4" style="margin-top: 40px;>
                     <div class="col-md-6">
                         <?php
                         // Display the latest post from 'Featured' category
