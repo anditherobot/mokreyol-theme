@@ -26,7 +26,7 @@ get_header();
             <main id="main" class="site-main">
                 
                 <!-- New Row for Featured Post and Buttons -->
-                <div class="row mb-4" style="margin-top: 40px;">
+                <div class="row mb-4">
                     <div class="col-md-6">
                         <?php
                         // Display the latest post from 'Featured' category
@@ -36,17 +36,19 @@ get_header();
                         ));
                         if ($featured_query->have_posts()) :
                             while ($featured_query->have_posts()) : $featured_query->the_post(); ?>
-                                <div class="featured-post" style="background-color: #f0f0f0; border-radius: 10px; padding: 20px;">
-                                    <h3 class="post-title"><?php the_title(); ?></h3>
-                                    <?php if (has_post_thumbnail()) : ?>
-                                        <div class="featured-image">
-                                            <?php the_post_thumbnail('medium', array('class' => 'img-fluid rounded')); ?>
+                                <a href="<?php the_permalink(); ?>" class="featured-post-link">
+                                    <div class="featured-post" style="background-color: #f0f0f0; border-radius: 10px; padding: 20px;">
+                                        <h3 class="post-title"><?php the_title(); ?></h3>
+                                        <?php if (has_post_thumbnail()) : ?>
+                                            <div class="featured-image">
+                                                <?php the_post_thumbnail('medium', array('class' => 'img-fluid rounded')); ?>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="post-excerpt">
+                                            <?php the_excerpt(); ?>
                                         </div>
-                                    <?php endif; ?>
-                                    <div class="post-excerpt">
-                                        <?php the_excerpt(); ?>
                                     </div>
-                                </div>
+                                </a>
                         <?php
                             endwhile;
                             wp_reset_postdata();
@@ -56,9 +58,9 @@ get_header();
                         ?>
                     </div>
                     <div class="col-md-6 d-flex flex-column justify-content-around">
-                        <a href="/diksyone" class="btn btn-secondary mb-3">Diksyonè</a>
-                        <a href="/jwet" class="btn btn-secondary mb-3">Jwèt</a>
-                        <a href="/art" class="btn btn-secondary">Art</a>
+                        <a href="/diksyone" class="btn btn-secondary mb-3 btn-alt-color-1">Diksyonè</a>
+                        <a href="/jwet" class="btn btn-secondary mb-3 btn-alt-color-2">Jwèt</a>
+                        <a href="/art" class="btn btn-secondary btn-alt-color-3">Art</a>
                     </div>
                 </div>
 
@@ -85,5 +87,29 @@ get_footer();
     }
     .featured-image img {
         border-radius: 10px;
+    }
+    .featured-post-link {
+        text-decoration: none;
+        color: inherit;
+    }
+    .featured-post-link:hover .featured-post {
+        background-color: #e0e0e0;
+    }
+    .btn-alt-color-1 {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+    .btn-alt-color-2 {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+    .btn-alt-color-3 {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+    @media (max-width: 767.98px) {
+        .featured-post, .col-md-6 {
+            margin-bottom: 20px;
+        }
     }
 </style>
