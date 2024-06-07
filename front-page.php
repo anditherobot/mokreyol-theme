@@ -37,15 +37,17 @@ get_header();
                         if ($featured_query->have_posts()) :
                             while ($featured_query->have_posts()) : $featured_query->the_post(); ?>
                                 <a href="<?php the_permalink(); ?>" class="featured-post-link">
-                                    <div class="featured-post" style="background-color: #f0f0f0; border-radius: 10px; padding: 20px;">
-                                        <h3 class="post-title"><?php the_title(); ?></h3>
-                                        <?php if (has_post_thumbnail()) : ?>
-                                            <div class="featured-image">
-                                                <?php the_post_thumbnail('medium', array('class' => 'img-fluid rounded')); ?>
+                                    <div class="featured-post card" style="background-color: #f0f0f0; border-radius: 10px; padding: 20px;">
+                                        <div class="card-body">
+                                            <h3 class="card-title"><?php the_title(); ?></h3>
+                                            <?php if (has_post_thumbnail()) : ?>
+                                                <div class="featured-image">
+                                                    <?php the_post_thumbnail('medium', array('class' => 'img-fluid rounded')); ?>
+                                                </div>
+                                            <?php endif; ?>
+                                            <div class="post-excerpt card-text">
+                                                <?php the_excerpt(); ?>
                                             </div>
-                                        <?php endif; ?>
-                                        <div class="post-excerpt">
-                                            <?php the_excerpt(); ?>
                                         </div>
                                     </div>
                                 </a>
@@ -58,9 +60,21 @@ get_header();
                         ?>
                     </div>
                     <div class="col-md-6 d-flex flex-column justify-content-around">
-                        <a href="/diksyone" class="btn btn-secondary mb-3 btn-alt-color-1">Diksyonè</a>
-                        <a href="/jwet" class="btn btn-secondary mb-3 btn-alt-color-2">Jwèt</a>
-                        <a href="/art" class="btn btn-secondary btn-alt-color-3">Art</a>
+                        <a href="/diksyone" class="card mb-3 btn-alt-color-1 text-decoration-none">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Diksyonè</h5>
+                            </div>
+                        </a>
+                        <a href="/jwet" class="card mb-3 btn-alt-color-2 text-decoration-none">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Jwèt</h5>
+                            </div>
+                        </a>
+                        <a href="/art" class="card btn-alt-color-3 text-decoration-none">
+                            <div class="card-body text-center">
+                                <h5 class="card-title">Art</h5>
+                            </div>
+                        </a>
                     </div>
                 </div>
 
@@ -106,6 +120,12 @@ get_footer();
     .btn-alt-color-3 {
         background-color: #dc3545;
         border-color: #dc3545;
+    }
+    .card-body {
+        padding: 1.5rem;
+    }
+    .card-title {
+        margin-bottom: 0;
     }
     @media (max-width: 767.98px) {
         .featured-post, .col-md-6 {
