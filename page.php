@@ -25,7 +25,7 @@ get_header();
       <div class="row">
         <div class="<?= bootscore_main_col_class(); ?>">
 
-          <main id="main" class="site-main">
+          <main id="main" class="site-main" style="margin-top: 45px; border-top: 2px solid black;">
 
             <header class="entry-header">
               <?php the_post(); ?>
