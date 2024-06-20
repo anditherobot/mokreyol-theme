@@ -37,30 +37,7 @@ function get_random_term_from_json() {
         <?php bs_after_primary(); ?>
 
         <!-- Category Bar Row -->
-        <div class="jumbotron mt-4 p-1 bg-light bg-gradient border rounded-3">
-            <div class="categories-container d-flex flex-wrap">
-                <?php
-                $max_displayed_categories = 10;
-                $categories = get_categories(array(
-                    'orderby' => 'name',
-                    'order'   => 'ASC'
-                ));
-                $count = 0;
-                foreach ($categories as $category) {
-                    $category_link = get_category_link($category->term_id);
-                    echo '<a href="' . esc_url($category_link) . '" class="category">' . esc_html($category->name) . '</a>';
-                    $count++;
-                    if ($count >= $max_displayed_categories) {
-                        break;
-                    }
-                }
-                if (count($categories) > $max_displayed_categories) {
-                    $categories_page_link = get_permalink(get_page_by_path('lis-kategori'));
-                    echo '<a href="' . esc_url($categories_page_link) . '" class="category">Lis Tout</a>';
-                }
-                ?>
-            </div>
-        </div>
+        <?php get_template_part('jumbotron'); ?>
 
         <div class="row">
             <main id="main" class="site-main">
@@ -112,7 +89,7 @@ function get_random_term_from_json() {
                 </div>
 
                 <!-- Existing content -->
-                <?php get_template_part('jumbotron'); ?>
+          
                 <?php get_template_part('recent-posts'); ?>
                 <?php get_template_part('widgets-section'); ?>
 
