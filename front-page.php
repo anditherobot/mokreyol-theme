@@ -14,6 +14,20 @@
  */
 
 get_header();
+
+function get_random_term_from_json() {
+    $file_path = get_template_directory() . '/data/data.file.json'; // Adjust path if necessary
+    if (file_exists($file_path)) {
+        $json_data = file_get_contents($file_path);
+        $terms = json_decode($json_data, true);
+        if (!empty($terms)) {
+            $random_index = array_rand($terms);
+            return $terms[$random_index];
+        }
+    }
+    return ['Term' => 'Diksyonè', 'Definition' => '']; // Fallback term
+}
+
 ?>
 
 <div id="content" class="site-content <?= bootscore_container_class(); ?> py-5 mt-5">
@@ -22,6 +36,32 @@ get_header();
         <!-- Hook to add something nice -->
         <?php bs_after_primary(); ?>
 
+        <!-- Category Bar Row -->
+        <div class="jumbotron mt-4 p-1 bg-light bg-gradient border rounded-3">
+            <div class="categories-container d-flex flex-wrap">
+                <?php
+                $max_displayed_categories = 10;
+                $categories = get_categories(array(
+                    'orderby' => 'name',
+                    'order'   => 'ASC'
+                ));
+                $count = 0;
+                foreach ($categories as $category) {
+                    $category_link = get_category_link($category->term_id);
+                    echo '<a href="' . esc_url($category_link) . '" class="category">' . esc_html($category->name) . '</a>';
+                    $count++;
+                    if ($count >= $max_displayed_categories) {
+                        break;
+                    }
+                }
+                if (count($categories) > $max_displayed_categories) {
+                    $categories_page_link = get_permalink(get_page_by_path('lis-kategori'));
+                    echo '<a href="' . esc_url($categories_page_link) . '" class="category">Lis Tout</a>';
+                }
+                ?>
+            </div>
+        </div>
+
         <div class="row">
             <main id="main" class="site-main">
                 
@@ -29,7 +69,6 @@ get_header();
                 <div class="row mb-4">
                     <div class="col-md-6">
                         <?php
-                        // Display the latest post from 'Featured' category
                         $featured_query = new WP_Query(array(
                             'category_name' => 'Featured',
                             'posts_per_page' => 1,
@@ -60,19 +99,13 @@ get_header();
                         ?>
                     </div>
                     <div class="col-md-6 d-flex flex-column justify-content-around">
-                        <a href="diksyone.mokreyol.com" class="card mb-3 btn-alt-color-1 text-decoration-none shadow-sm">
+                        <?php
+                        $random_term = get_random_term_from_json();
+                        ?>
+                        <a href="https://diksyone.mokreyol.com" class="card shadow-sm text-decoration-none mb-3">
                             <div class="card-body text-center">
-                                <h5 class="card-title">Diksyonè</h5>
-                            </div>
-                        </a>
-                        <a href="/jwet" class="card mb-3 btn-alt-color-2 text-decoration-none shadow-sm">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Jwèt</h5>
-                            </div>
-                        </a>
-                        <a href="/art" class="card btn-alt-color-3 text-decoration-none shadow-sm">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">Art</h5>
+                                <h5 class="card-title"><?= esc_html($random_term['Term']); ?></h5>
+                                <p class="card-text"><?= esc_html($random_term['Definition']); ?></p>
                             </div>
                         </a>
                     </div>
@@ -117,22 +150,27 @@ get_footer();
         background-color: #007bff;
         border-color: #007bff;
         color: #ffffff;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
         transition: background-color 0.3s ease, transform 0.3s ease;
     }
-    .btn-alt-color-2 {
-        background-color: #28a745;
-        border-color: #28a745;
-        color: #ffffff;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .btn-alt-color-3 {
-        background-color: #dc3545;
-        border-color: #dc3545;
-        color: #ffffff;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-    .btn-alt-color-1:hover, .btn-alt-color-2:hover, .btn-alt-color-3:hover {
+    .btn-alt-color-1:hover {
+        background-color: #0056b3;
         transform: translateY(-3px);
+    }
+    .categories-container .category {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        padding: 5px 10px;
+        background-color: #f1f1f1;
+        border-radius: 3px;
+        text-decoration: none;
+        color: #333;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .categories-container .category:hover {
+        background-color: #e1e1e1;
+        color: #000;
     }
     .card-body {
         padding: 1.5rem;
