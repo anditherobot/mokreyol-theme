@@ -79,12 +79,14 @@ function get_random_term_from_json() {
                         <?php
                         $random_term = get_random_term_from_json();
                         ?>
-                        <a href="https://diksyone.mokreyol.com" class="card shadow-sm text-decoration-none mb-3">
+                       
                             <div class="card-body text-center">
+                                <h2>Mo seleksyone</h2>
                                 <h5 class="card-title"><?= esc_html($random_term['Term']); ?></h5>
                                 <p class="card-text"><?= esc_html($random_term['Definition']); ?></p>
+                                <a href="https://diksyone.mokreyol.com" class="card shadow-sm text-decoration-none mb-3"> Diskyonè </a>
                             </div>
-                        </a>
+                      
                     </div>
                 </div>
 
