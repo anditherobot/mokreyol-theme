@@ -16,7 +16,7 @@
 get_header();
 
 function get_random_term_from_json() {
-    $file_path = get_template_directory() . '/data/data.file.json'; // Adjust path if necessary
+    $file_path = get_template_directory() . '/data/data_file.json'; // Adjust path if necessary
     if (file_exists($file_path)) {
         $json_data = file_get_contents($file_path);
         $terms = json_decode($json_data, true);
