@@ -37,7 +37,7 @@ get_header();
                         if ($featured_query->have_posts()) :
                             while ($featured_query->have_posts()) : $featured_query->the_post(); ?>
                                 <a href="<?php the_permalink(); ?>" class="featured-post-link">
-                                    <div class="featured-post card" style="background-color: #f0f0f0; border-radius: 10px; padding: 20px;">
+                                    <div class="featured-post card shadow-sm">
                                         <div class="card-body">
                                             <h3 class="card-title"><?php the_title(); ?></h3>
                                             <?php if (has_post_thumbnail()) : ?>
@@ -60,17 +60,17 @@ get_header();
                         ?>
                     </div>
                     <div class="col-md-6 d-flex flex-column justify-content-around">
-                        <a href="/diksyone" class="card mb-3 btn-alt-color-1 text-decoration-none">
+                        <a href="diksyone.mokreyol.com" class="card mb-3 btn-alt-color-1 text-decoration-none shadow-sm">
                             <div class="card-body text-center">
                                 <h5 class="card-title">Diksyonè</h5>
                             </div>
                         </a>
-                        <a href="/jwet" class="card mb-3 btn-alt-color-2 text-decoration-none">
+                        <a href="/jwet" class="card mb-3 btn-alt-color-2 text-decoration-none shadow-sm">
                             <div class="card-body text-center">
                                 <h5 class="card-title">Jwèt</h5>
                             </div>
                         </a>
-                        <a href="/art" class="card btn-alt-color-3 text-decoration-none">
+                        <a href="/art" class="card btn-alt-color-3 text-decoration-none shadow-sm">
                             <div class="card-body text-center">
                                 <h5 class="card-title">Art</h5>
                             </div>
@@ -95,41 +95,59 @@ get_footer();
 
 <style>
     .featured-post {
-        background-color: #f0f0f0;
+        background-color: #ffffff;
         border-radius: 10px;
         padding: 20px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .featured-post:hover {
+        background-color: #f8f9fa;
+        transform: translateY(-5px);
     }
     .featured-image img {
         border-radius: 10px;
+        width: 100%;
+        height: auto;
     }
     .featured-post-link {
         text-decoration: none;
         color: inherit;
     }
-    .featured-post-link:hover .featured-post {
-        background-color: #e0e0e0;
-    }
     .btn-alt-color-1 {
         background-color: #007bff;
         border-color: #007bff;
+        color: #ffffff;
+        transition: background-color 0.3s ease, transform 0.3s ease;
     }
     .btn-alt-color-2 {
         background-color: #28a745;
         border-color: #28a745;
+        color: #ffffff;
+        transition: background-color 0.3s ease, transform 0.3s ease;
     }
     .btn-alt-color-3 {
         background-color: #dc3545;
         border-color: #dc3545;
+        color: #ffffff;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    .btn-alt-color-1:hover, .btn-alt-color-2:hover, .btn-alt-color-3:hover {
+        transform: translateY(-3px);
     }
     .card-body {
         padding: 1.5rem;
     }
     .card-title {
         margin-bottom: 0;
+        font-size: 1.25rem;
     }
     @media (max-width: 767.98px) {
         .featured-post, .col-md-6 {
             margin-bottom: 20px;
+        }
+        .featured-image img {
+            width: 100%;
+            height: auto;
         }
     }
 </style>
